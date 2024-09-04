@@ -42,7 +42,7 @@ const App: React.FC = () => {
                 style={styles.video}
             />
             <img
-                src="/src/assets/overlay.gif"
+                src="/overlay.gif"
                 alt="Overlay GIF"
                 style={styles.overlayGif}
             />
