@@ -10,7 +10,7 @@ const App: React.FC = () => {
         const startCamera = async () => {
             try {
                 const stream = await navigator.mediaDevices.getUserMedia(
-                    {video: {facingMode: {exact: "environment"}}}
+                    {video: {facingMode: "environment"}}
                 );
                 setStream(stream);
                 navigate('/rain');
@@ -50,7 +50,7 @@ const styles: { [key: string]: React.CSSProperties } = {
         backgroundRepeat: 'no-repeat',
     },
     brand: {
-        width: '15%',
+        width: '300px',
         color: 'white',
         fontFamily: 'Arial, sans-serif',
     },
