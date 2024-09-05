@@ -1,77 +1,83 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
+import {useNavigate} from "react-router-dom";
+import {useStream} from "./context/StreamContext.tsx";
+
 const App: React.FC = () => {
-    const videoRef = useRef<HTMLVideoElement | null>(null);
-    const containerRef = useRef<HTMLDivElement | null>(null);
+    const navigate = useNavigate();
+    const {setStream} = useStream();
 
-    const startCamera = async () => {
-        try {
-            const stream = await navigator.mediaDevices.getUserMedia(
-                { video: { facingMode: { exact: "environment" }} }
-            );
-            if (videoRef.current) {
-                videoRef.current.srcObject = stream;
-            }
-        } catch (error) {
-            console.error('Kamera erişim hatası:', error);
-        }
-    };
-
-    const enableFullscreen = () => {
-        if (containerRef.current) {
-            const elem = containerRef.current as any;
-            if (elem.requestFullscreen) {
-                elem.requestFullscreen();
-            } else if (elem.mozRequestFullScreen) { /* Firefox */
-                elem.mozRequestFullScreen();
-            } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
-                elem.webkitRequestFullscreen();
-            } else if (elem.msRequestFullscreen) { /* IE/Edge */
-                elem.msRequestFullscreen();
+    const handleLaunch = () => {
+        const startCamera = async () => {
+            try {
+                const stream = await navigator.mediaDevices.getUserMedia(
+                    {video: {facingMode: {exact: "environment"}}}
+                );
+                setStream(stream);
+                navigate('/rain');
+            } catch (error) {
+                console.error('Kamera erişim hatası:', error);
             }
         }
-    };
+        startCamera().then();
 
-    useEffect(() => {
-        startCamera().then(() => enableFullscreen());
-    }, []);
-
+    }
     return (
-        <div ref={containerRef} style={styles.container}>
-            <video
-                ref={videoRef}
-                autoPlay
-                playsInline
-                style={styles.video}
-            />
-            <img
-                src="/overlay.gif"
-                alt="Overlay GIF"
-                style={styles.overlayGif}
-            />
+        <div style={styles.container}>
+            <div style={styles.top}>
+                <img src="/thePayback.png" alt="The Payback" style={styles.brand}/>
+            </div>
+            <div style={styles.bottom}>
+                <button style={styles.launchButton} onClick={() => {
+                    handleLaunch();
+                }}>Launch
+                </button>
+            </div>
         </div>
     );
 };
 
 const styles: { [key: string]: React.CSSProperties } = {
     container: {
-        position: 'relative',
         width: '100vw',
         height: '100vh',
-        overflow: 'hidden',
-        backgroundColor: 'black',
+        display: 'flex',
+        justifyContent: 'center',
+        flexDirection: 'column',
+        alignItems: 'center',
+        backgroundImage: `url('/bg.png')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
     },
-    video: {
-        width: '100%',
-        height: '100%',
-        objectFit: 'cover',
+    brand: {
+        width: '15%',
+        color: 'white',
+        fontFamily: 'Arial, sans-serif',
     },
-    overlayGif: {
-        position: 'absolute',
-        top: '50%',
-        left: '50%',
-        transform: 'translate(-50%, -50%)',
+    top: {
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'flex-end',
         width: '100%',
+        flex: 1,
+    },
+    bottom: {
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        width: '100%',
+        flex: 1,
+    },
+    launchButton: {
+        width: '10em',
+        height: '3em',
+        backgroundColor: '#70fd00',
+        color: 'black',
+        border: 'white 1px solid',
+        borderRadius: '2em',
+        cursor: 'pointer',
+        fontWeight: 'bold',
+        fontSize: '1.5em',
     },
 };
-
 export default App;
