@@ -25,6 +25,7 @@ const ViewMoneyModel = (
             pitch={pitch}
             pivot={pivot}
             initialZoom={zoom}
+            sceneViewer={false}
             scrollable={false}
             wheelScrollable={false}
             useGrabCursor={false}
