@@ -27,6 +27,12 @@ const ViewMoneyModel = (
             onTouchMove={e => {
                 e.preventDefault()
             }}
+            onPointerMove={e => {
+                e.preventDefault()
+            }}
+            onMouseMove={e => {
+                e.preventDefault()
+            }}
             exposure={0.4}
             pitch={pitch}
             pivot={pivot}
