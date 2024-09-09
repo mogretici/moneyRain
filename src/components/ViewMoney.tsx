@@ -27,6 +27,7 @@ const ViewMoneyModel = (
             initialZoom={zoom}
             sceneViewer={false}
             scrollable={false}
+            webAR={false}
             wheelScrollable={false}
             useGrabCursor={false}
             rotate={false}
