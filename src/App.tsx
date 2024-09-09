@@ -1,12 +1,14 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {useNavigate} from "react-router-dom";
 import {useStream} from "./context/StreamContext.tsx";
 
 const App: React.FC = () => {
     const navigate = useNavigate();
     const {setStream} = useStream();
+    const [loading, setLoading] = useState(false);
 
     const handleLaunch = () => {
+        setLoading(true);
         const startCamera = async () => {
             try {
                 const stream = await navigator.mediaDevices.getUserMedia(
@@ -15,10 +17,16 @@ const App: React.FC = () => {
                 setStream(stream);
                 navigate('/rain');
             } catch (error) {
-                console.error('Kamera erişim hatası:', error);
+                console.error('Camera error:', error);
             }
         }
-        startCamera().then();
+        startCamera().then(
+            () => {
+                setTimeout(() => {
+                    setLoading(false);
+                }, 2500);
+            }
+        );
 
     }
     return (
@@ -29,7 +37,17 @@ const App: React.FC = () => {
             <div style={styles.bottom}>
                 <button style={styles.launchButton} onClick={() => {
                     handleLaunch();
-                }}>Launch
+                }}>
+                    {loading
+                        ?
+                        <img src="/loading.svg" alt="loading" style={{width: '2em', height: '2em'}}/>
+                        :
+                        <div
+                            style={{color: 'white'}}
+                        >
+                            Launch
+                        </div>
+                    }
                 </button>
             </div>
         </div>
@@ -41,6 +59,7 @@ const styles: { [key: string]: React.CSSProperties } = {
         width: '100vw',
         height: '100vh',
         display: 'flex',
+        overflow: 'hidden',
         justifyContent: 'center',
         flexDirection: 'column',
         alignItems: 'center',
@@ -50,7 +69,7 @@ const styles: { [key: string]: React.CSSProperties } = {
         backgroundRepeat: 'no-repeat',
     },
     brand: {
-        width: '300px',
+        width: '400px',
         color: 'white',
         fontFamily: 'Arial, sans-serif',
     },
@@ -78,6 +97,8 @@ const styles: { [key: string]: React.CSSProperties } = {
         cursor: 'pointer',
         fontWeight: 'bold',
         fontSize: '1.5em',
+        outline: 'none',
+
     },
 };
 export default App;

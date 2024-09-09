@@ -1,12 +1,14 @@
 import React, {useEffect, useRef} from 'react';
 import {useStream} from "../context/StreamContext.tsx";
 import ViewMoney from "../components/ViewMoney.tsx";
+import {useNavigate} from "react-router-dom";
 
 
 const Rain: React.FC = () => {
     const videoRef = useRef<HTMLVideoElement | null>(null);
     const containerRef = useRef<HTMLDivElement | null>(null);
     const {stream} = useStream();
+    const navigate = useNavigate();
 
     const enableFullscreen = () => {
         if (containerRef.current) {
@@ -27,6 +29,8 @@ const Rain: React.FC = () => {
     useEffect(() => {
         if (stream && videoRef.current) {
             videoRef.current.srcObject = stream;
+        } else {
+            navigate('/');
         }
         enableFullscreen();
     }, [stream]);

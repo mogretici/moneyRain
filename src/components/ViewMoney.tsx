@@ -26,6 +26,7 @@ const ViewMoneyModel = (
             pivot={pivot}
             initialZoom={zoom}
             wheelScrollable={false}
+            useGrabCursor={false}
             rotate={false}
             zoom={false}
             arPriority={["webAR", "sceneViewer", "quickLook"]}
