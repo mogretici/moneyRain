@@ -25,13 +25,9 @@ const ViewMoneyModel = (
             pitch={pitch}
             pivot={pivot}
             initialZoom={zoom}
-            wheelScrollable={true}
+            wheelScrollable={false}
             rotate={false}
             zoom={false}
-            sceneViewer={true}
-            quickLook={true}
-            animationRepeatMode="all"
-            useDefaultEnv={true}
             arPriority={["webAR", "sceneViewer", "quickLook"]}
         />
     );

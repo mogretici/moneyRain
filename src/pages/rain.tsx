@@ -72,9 +72,9 @@ const styles: { [key: string]: React.CSSProperties } = {
     brand: {
         position: 'absolute',
         top: '5%',
-        left: '40%',
-        right: '40%',
-        width: '20%',
+        left: '30%',
+        right: '30%',
+        width: '40%',
         backgroundColor: 'rgba(128,126,126,0.4)',
         borderRadius: '5em',
         zIndex: 3,
