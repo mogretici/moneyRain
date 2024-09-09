@@ -38,6 +38,7 @@ const ViewMoneyModel = (
 };
 const styles: { [key: string]: React.CSSProperties } = {
     view3D: {
+        touchAction: 'none',
         position: 'absolute',
         width: '100%',
         height: '100%',
