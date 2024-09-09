@@ -2,7 +2,7 @@ import React from "react";
 import View3D from "@egjs/react-view3d";
 import "@egjs/react-view3d/css/view3d-bundle.min.css";
 
-const ViewMoney = (
+const ViewMoneyModel = (
     {
         zoom,
         pitch,
@@ -46,5 +46,5 @@ const styles: { [key: string]: React.CSSProperties } = {
         zIndex: 1,
     },
 };
-
+const ViewMoney = React.memo(ViewMoneyModel);
 export default ViewMoney;

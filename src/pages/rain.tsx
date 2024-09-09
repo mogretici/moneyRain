@@ -46,7 +46,7 @@ const Rain: React.FC = () => {
             <ViewMoney zoom={2} pitch={60} pivot={["50%", "0%", "0%"]}/>
             <img
                 src="/link.png"
-                alt="The Payback"
+                alt="The Payback Website"
                 style={styles.brand}
                 onClick={() => {
                     window.open('https://thepayback.us', '_blank');
@@ -72,12 +72,12 @@ const styles: { [key: string]: React.CSSProperties } = {
     brand: {
         position: 'absolute',
         top: '5%',
-        left: '35%',
-        right: '35%',
-        width: '30%',
-        color: 'white',
+        left: '40%',
+        right: '40%',
+        width: '20%',
+        backgroundColor: 'rgba(128,126,126,0.4)',
+        borderRadius: '5em',
         zIndex: 3,
-        fontFamily: 'Arial, sans-serif',
     },
     view3D: {
         position: 'absolute',
