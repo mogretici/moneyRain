@@ -44,10 +44,12 @@ const Rain: React.FC = () => {
                 playsInline
                 style={styles.video}
             />
-            <ViewMoney zoom={2} pitch={45} pivot={["20%", "0%", "0%"]}/>
-            <ViewMoney zoom={2} pitch={90} pivot={["50%", "0%", "0%"]}/>
-            <ViewMoney zoom={2} pitch={0} pivot={["70%", "0%", "0%"]}/>
-            <ViewMoney zoom={2} pitch={60} pivot={["50%", "0%", "0%"]}/>
+            <div style={styles.view3D}>
+                <ViewMoney zoom={2} pitch={45} pivot={["20%", "0%", "0%"]}/>
+                <ViewMoney zoom={2} pitch={90} pivot={["50%", "0%", "0%"]}/>
+                <ViewMoney zoom={2} pitch={0} pivot={["70%", "0%", "0%"]}/>
+                <ViewMoney zoom={2} pitch={60} pivot={["50%", "0%", "0%"]}/>
+            </div>
             <img
                 src="/link.png"
                 alt="The Payback Website"
@@ -84,20 +86,7 @@ const styles: { [key: string]: React.CSSProperties } = {
         zIndex: 3,
     },
     view3D: {
-        position: 'absolute',
-        width: '100%',
-        height: '100%',
-        top: 0,
-        left: 0,
-        zIndex: 1,
-    },
-    view3D2: {
-        position: 'absolute',
-        width: '100%',
-        height: '100%',
-        top: 0,
-        left: 0,
-        zIndex: 2,
-    },
+        touchAction: 'none',
+    }
 };
 export default Rain;

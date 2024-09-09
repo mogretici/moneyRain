@@ -21,18 +21,6 @@ const ViewMoneyModel = (
             onReady={e => {
                 console.log("3D Model is loaded", e);
             }}
-            onTouchStart={e => {
-                e.preventDefault()
-            }}
-            onTouchMove={e => {
-                e.preventDefault()
-            }}
-            onPointerMove={e => {
-                e.preventDefault()
-            }}
-            onMouseMove={e => {
-                e.preventDefault()
-            }}
             exposure={0.4}
             pitch={pitch}
             pivot={pivot}
@@ -50,7 +38,6 @@ const ViewMoneyModel = (
 };
 const styles: { [key: string]: React.CSSProperties } = {
     view3D: {
-        touchAction: 'none',
         position: 'absolute',
         width: '100%',
         height: '100%',
