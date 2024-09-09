@@ -21,6 +21,12 @@ const ViewMoneyModel = (
             onReady={e => {
                 console.log("3D Model is loaded", e);
             }}
+            onTouchStart={e => {
+                e.preventDefault()
+            }}
+            onTouchMove={e => {
+                e.preventDefault()
+            }}
             exposure={0.4}
             pitch={pitch}
             pivot={pivot}
