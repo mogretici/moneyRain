@@ -49,7 +49,7 @@ const Rain: React.FC = () => {
                 alt="The Payback"
                 style={styles.brand}
                 onClick={() => {
-                    window.location.href = "https://thepayback.us";
+                    window.open('https://thepayback.us', '_blank');
                 }}
             />
         </div>
@@ -76,6 +76,7 @@ const styles: { [key: string]: React.CSSProperties } = {
         right: '35%',
         width: '30%',
         color: 'white',
+        zIndex: 3,
         fontFamily: 'Arial, sans-serif',
     },
     view3D: {
