@@ -1,7 +1,6 @@
 import React, {useEffect, useRef} from 'react';
 import {useStream} from "../context/StreamContext.tsx";
-import View3D from "@egjs/react-view3d";
-import "@egjs/react-view3d/css/view3d-bundle.min.css";
+import ViewMoney from "../components/ViewMoney.tsx";
 
 
 const Rain: React.FC = () => {
@@ -41,24 +40,17 @@ const Rain: React.FC = () => {
                 playsInline
                 style={styles.video}
             />
-            <View3D
-                tag="div"
-                src="/moneys.glb"
-                style={styles.view3D}
-                onReady={e => {
-                    console.log("3D Model is loaded", e);
-                }}
-                webAR={true}
-                sceneViewer={true}
-                quickLook={true}
-                animationRepeatMode="all"
-                useDefaultEnv={true}
-                arPriority={["webAR", "sceneViewer", "quickLook"]}
-            />
+            <ViewMoney zoom={2} pitch={45} pivot={["20%", "0%", "0%"]}/>
+            <ViewMoney zoom={2} pitch={90} pivot={["50%", "0%", "0%"]}/>
+            <ViewMoney zoom={2} pitch={0} pivot={["70%", "0%", "0%"]}/>
+            <ViewMoney zoom={2} pitch={60} pivot={["50%", "0%", "0%"]}/>
             <img
-                src="/thePayback.png"
+                src="/link.png"
                 alt="The Payback"
                 style={styles.brand}
+                onClick={() => {
+                    window.location.href = "https://thepayback.us";
+                }}
             />
         </div>
     );
@@ -79,7 +71,7 @@ const styles: { [key: string]: React.CSSProperties } = {
     },
     brand: {
         position: 'absolute',
-        bottom: '5%',
+        top: '5%',
         left: '35%',
         right: '35%',
         width: '30%',
@@ -93,6 +85,14 @@ const styles: { [key: string]: React.CSSProperties } = {
         top: 0,
         left: 0,
         zIndex: 1,
+    },
+    view3D2: {
+        position: 'absolute',
+        width: '100%',
+        height: '100%',
+        top: 0,
+        left: 0,
+        zIndex: 2,
     },
 };
 export default Rain;
