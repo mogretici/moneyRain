@@ -57,27 +57,45 @@ const Rain: React.FC = () => {
                 style={styles.video}
             />
             <div style={styles.view3D}>
-                <View3D
-                    ref={view3DRef}
-                    tag="div"
+                <model-viewer
+                    style={{width: '100%', height: '100%'}}
+                    id="dimension-demo"
                     src="/moneys.glb"
-                    style={styles.view3D}
-                    onReady={e => {
-                        console.log("3D Model is loaded", e);
-                    }}
-                    useDefaultEnv
-                    quickLook={true}
-                    webAR={{"vertical": true,}}
-                    sceneViewer={{"horizontal": true}}
-                    iosSrc={"/moneys.usdz"}
-                    scrollable={false}
-                    zoom={{"type": "distance"}}
-                    wheelScrollable={false}
-                    useGrabCursor={false}
-                    rotate={false}
-                    arPriority={["webAR", "quickLook", "sceneViewer"]}
+                    shadow-intensity="0.5"
+                    exposure="1.2"
+                    autoplay=""
+                    auto-rotate=""
+                    ar=""
+                    ar-modes="webxr scene-viewer quick-look"
+                    ios-src="/moneys.usdz"
+                    camera-orbit="-10deg 75deg m"
+                    max-camera-orbit="auto 100deg auto"
+                    camera-controls=""
+                    data-js-focus-visible=""
+                    alt="ibb"
+                    ar-status="not-presenting"
                 />
             </div>
+            <button slot="ar-button" className="dimm mid" style={{
+                position: 'absolute',
+                bottom: '1em',
+                left: '1em',
+                zIndex: 2,
+                display: 'flex',
+                alignItems: 'center',
+                padding: '0.5em',
+                backgroundColor: 'rgba(128,126,126,0.4)',
+                borderRadius: '1em',
+                color: 'white',
+                border: 'none',
+            }}>
+                <img className="arButtonImage" src="/ar.svg" style={{
+                    width: '2em',
+                    height: '2em',
+                    marginRight: '1em',
+                }}/>
+                AR İÇİN TIKLAYINIZ!
+            </button>
             <img
                 src="/link.png"
                 alt="The Payback Website"
@@ -90,13 +108,23 @@ const Rain: React.FC = () => {
     );
 };
 
-const styles: { [key: string]: React.CSSProperties } = {
+const styles: {
+    [key
+        :
+        string
+        ]:
+        React.CSSProperties
+} = {
     container: {
         position: 'relative',
-        width: '100vw',
-        height: '100vh',
-        overflow: 'hidden',
-        backgroundColor: 'black',
+        width:
+            '100vw',
+        height:
+            '100vh',
+        overflow:
+            'hidden',
+        backgroundColor:
+            'black',
     },
     video: {
         width: '100%',
