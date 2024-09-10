@@ -65,6 +65,9 @@ const Rain: React.FC = () => {
                     onReady={e => {
                         console.log("3D Model is loaded", e);
                     }}
+                    webAR={true}
+                    sceneViewer={true}
+                    quickLook={true}
                     iosSrc={"/moneys.usdz"}
                     scrollable={false}
                     zoom={{"type": "distance"}}
