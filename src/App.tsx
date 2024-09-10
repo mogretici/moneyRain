@@ -13,15 +13,9 @@ const App: React.FC = () => {
                               touch-action="pan-y" alt="A 3D model of an astronaut" shadow-intensity="2"
                               max-camera-orbit="auto 90deg auto"
                               ios-src="/moneys.usdz" xr-environment>
-                    <div style={styles.bottom}>
-                        <button slot="ar-button" style={styles.launchButton}>
-                            <div
-                                style={{color: 'white'}}
-                            >
-                                Launch
-                            </div>
-                        </button>
-                    </div>
+                    <button slot="ar-button" style={styles.launchButton}>
+                        Launch
+                    </button>
                 </model-viewer>
             </div>
         </div>
@@ -65,7 +59,7 @@ const styles: { [key: string]: React.CSSProperties } = {
         width: '10em',
         height: '3em',
         backgroundColor: '#70fd00',
-        color: 'black',
+        color: 'white',
         border: 'white 1px solid',
         borderRadius: '2em',
         cursor: 'pointer',
