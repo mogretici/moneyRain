@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {useNavigate} from "react-router-dom";
 import {useStream} from "./context/StreamContext.tsx";
+import "@egjs/view3d/css/view3d-bundle.min.css";
 
 const App: React.FC = () => {
     const navigate = useNavigate();

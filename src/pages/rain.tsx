@@ -1,7 +1,7 @@
 import React, {useEffect, useRef} from 'react';
 import {useStream} from "../context/StreamContext.tsx";
-import ViewMoney from "../components/ViewMoney.tsx";
 import {useNavigate} from "react-router-dom";
+import View3D from "@egjs/react-view3d";
 
 
 const Rain: React.FC = () => {
@@ -45,10 +45,27 @@ const Rain: React.FC = () => {
                 style={styles.video}
             />
             <div style={styles.view3D}>
-                <ViewMoney zoom={2} pitch={45} pivot={["20%", "0%", "0%"]}/>
-                <ViewMoney zoom={2} pitch={90} pivot={["50%", "0%", "0%"]}/>
-                <ViewMoney zoom={2} pitch={0} pivot={["70%", "0%", "0%"]}/>
-                <ViewMoney zoom={2} pitch={60} pivot={["50%", "0%", "0%"]}/>
+                {/*<ViewMoney zoom={1} pitch={45} pivot={["40%", "0%", "0%"]}/>*/}
+                <View3D
+                    tag="div"
+                    src="/moneys.glb"
+                    style={styles.view3D}
+                    onReady={e => {
+                        console.log("3D Model is loaded", e);
+                    }}
+                    exposure={0.4}
+                    pitch={45}
+                    initialZoom={1}
+                    scrollable={false}
+                    webAR={{"overlayRoot": containerRef.current}}
+                    sceneViewer={false}
+                    quickLook={false}
+                    zoom={{"type": "distance"}}
+                    wheelScrollable={false}
+                    useGrabCursor={false}
+                    rotate={false}
+                    arPriority={["webAR", "sceneViewer", "quickLook"]}
+                />
             </div>
             <img
                 src="/link.png"
