@@ -1,14 +1,17 @@
 import React, {useEffect, useRef} from 'react';
 import {useStream} from "../context/StreamContext.tsx";
 import {useNavigate} from "react-router-dom";
-import View3D from "@egjs/react-view3d";
+import View3D, {ARButton, AROverlay} from "@egjs/react-view3d";
+import "@egjs/view3d/css/view3d-bundle.min.css";
 
 
 const Rain: React.FC = () => {
     const videoRef = useRef<HTMLVideoElement | null>(null);
     const containerRef = useRef<HTMLDivElement | null>(null);
+    const view3DRef = useRef<View3D | null>(null);
     const {stream} = useStream();
     const navigate = useNavigate();
+
 
     const enableFullscreen = () => {
         if (containerRef.current) {
@@ -32,6 +35,15 @@ const Rain: React.FC = () => {
         } else {
             navigate('/');
         }
+        const arEnter = async () => {
+            if (!view3DRef.current) return;
+            const arAvailable = await view3DRef.current.ar.isAvailable();
+            console.log("is available:", arAvailable);
+            await view3DRef.current.loadPlugins(new ARButton());
+            await view3DRef.current.loadPlugins(new AROverlay());
+            await view3DRef.current.ar.enter();
+        }
+        arEnter()
         enableFullscreen();
     }, [stream]);
 
@@ -46,6 +58,7 @@ const Rain: React.FC = () => {
             />
             <div style={styles.view3D}>
                 <View3D
+                    ref={view3DRef}
                     tag="div"
                     src="/moneys.glb"
                     style={styles.view3D}
@@ -54,14 +67,12 @@ const Rain: React.FC = () => {
                     }}
                     iosSrc={"/moneys.usdz"}
                     scrollable={false}
-                    webAR={true}
-                    sceneViewer={true}
-                    quickLook={true}
                     zoom={{"type": "distance"}}
                     wheelScrollable={false}
                     useGrabCursor={false}
                     rotate={false}
-                    arPriority={["webAR", "quickLook", "sceneViewer"]}/>
+                    arPriority={["webAR", "quickLook", "sceneViewer"]}
+                />
             </div>
             <img
                 src="/link.png"
