@@ -1,57 +1,28 @@
-import React, {useState} from 'react';
-import {useNavigate} from "react-router-dom";
-import {useStream} from "./context/StreamContext.tsx";
+import React from 'react';
 import "@egjs/view3d/css/view3d-bundle.min.css";
 
 const App: React.FC = () => {
-    const navigate = useNavigate();
-    const {setStream} = useStream();
-    const [loading, setLoading] = useState(false);
 
-    const handleLaunch = async () => {
-        setLoading(true);
-        const startCamera = async () => {
-            try {
-                const stream = await navigator.mediaDevices.getUserMedia(
-                    {video: {facingMode: "environment"}}
-                );
-              
-                setStream(stream);
-                navigate('/rain');
-            } catch (error) {
-                console.error('Camera error:', error);
-            }
-        }
-        startCamera().then(
-            () => {
-                setTimeout(() => {
-                    setLoading(false);
-                }, 2500);
-            }
-        );
-
-
-    }
     return (
         <div style={styles.container}>
             <div style={styles.top}>
                 <img src="/thePayback.png" alt="The Payback" style={styles.brand}/>
             </div>
             <div style={styles.bottom}>
-                <button style={styles.launchButton} onClick={() => {
-                    handleLaunch();
-                }}>
-                    {loading
-                        ?
-                        <img src="/loading.svg" alt="loading" style={{width: '2em', height: '2em'}}/>
-                        :
-                        <div
-                            style={{color: 'white'}}
-                        >
-                            Launch
-                        </div>
-                    }
-                </button>
+                <model-viewer ar ar-scale="fixed" camera-controls
+                              touch-action="pan-y" alt="A 3D model of an astronaut" shadow-intensity="2"
+                              max-camera-orbit="auto 90deg auto"
+                              ios-src="/moneys.usdz" xr-environment>
+                    <div style={styles.bottom}>
+                        <button slot="ar-button" style={styles.launchButton}>
+                            <div
+                                style={{color: 'white'}}
+                            >
+                                Launch
+                            </div>
+                        </button>
+                    </div>
+                </model-viewer>
             </div>
         </div>
     );
