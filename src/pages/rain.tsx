@@ -70,29 +70,27 @@ const Rain: React.FC = () => {
                     camera-controls=""
                     data-js-focus-visible=""
                     alt="ibb"
-                    ar-status="not-presenting"/>
+                    ar-status="not-presenting">
+                    <button slot="ar-button"
+                            style={{
+                                position: 'absolute',
+                                bottom: '1em',
+                                left: '1em',
+                                zIndex: 2,
+                                display: 'flex',
+                                alignItems: 'center',
+                                padding: '0.5em',
+                                backgroundColor: 'rgba(128,126,126,0.4)',
+                                borderRadius: '1em',
+                                color: 'white',
+                                border: 'none',
+                            }}>
+                        👋 Activate AR
+                    </button>
+                </model-viewer>
 
             </div>
-            <button slot="ar-button" className="dimm mid" style={{
-                position: 'absolute',
-                bottom: '1em',
-                left: '1em',
-                zIndex: 2,
-                display: 'flex',
-                alignItems: 'center',
-                padding: '0.5em',
-                backgroundColor: 'rgba(128,126,126,0.4)',
-                borderRadius: '1em',
-                color: 'white',
-                border: 'none',
-            }}>
-                <img className="arButtonImage" src="/ar.svg" style={{
-                    width: '2em',
-                    height: '2em',
-                    marginRight: '1em',
-                }}/>
-                AR İÇİN TIKLAYINIZ!
-            </button>
+            
             <img
                 src="/link.png"
                 alt="The Payback Website"
