@@ -57,20 +57,11 @@ const Rain: React.FC = () => {
                 style={styles.video}
             />
             <div style={styles.view3D}>
-                <model-viewer
-                    style={{width: '100%', height: '100%'}}
-                    id="dimension-demo"
-                    src="/moneys.glb"
-                    shadow-intensity="0.5"
-                    auto-rotate=""
-                    ar-modes="webxr scene-viewer quick-look"
-                    ios-src="/moneys.usdz"
-                    camera-orbit="-10deg 75deg m"
-                    max-camera-orbit="auto 100deg auto"
-                    camera-controls=""
-                    data-js-focus-visible=""
-                    alt="ibb"
-                    ar-status="not-presenting">
+
+                <model-viewer src="/moneys.glb" ar ar-scale="fixed" camera-controls
+                              touch-action="pan-y" alt="A 3D model of an astronaut" shadow-intensity="2"
+                              max-camera-orbit="auto 90deg auto"
+                              ios-src="/moneys.usdz" xr-environment>
                     <button slot="ar-button"
                             style={{
                                 position: 'absolute',
@@ -87,10 +78,11 @@ const Rain: React.FC = () => {
                             }}>
                         👋 Activate AR
                     </button>
+
                 </model-viewer>
 
             </div>
-            
+
             <img
                 src="/link.png"
                 alt="The Payback Website"
