@@ -22,11 +22,8 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "types": [
-      "@types/node",
-      "@types/react",
-      "@types/react-dom",
       "./src/types/model-viewer.d.ts"
-    ],
+    ]
   },
   "include": [
     "src"
