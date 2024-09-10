@@ -58,7 +58,7 @@ const Rain: React.FC = () => {
             />
             <div style={styles.view3D}>
 
-                <model-viewer src="/moneys.glb" ar ar-scale="fixed" camera-controls
+                <model-viewer src="/Astronaut.glb" ar ar-scale="fixed" camera-controls
                               touch-action="pan-y" alt="A 3D model of an astronaut" shadow-intensity="2"
                               max-camera-orbit="auto 90deg auto"
                               ios-src="/moneys.usdz" xr-environment>
