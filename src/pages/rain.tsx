@@ -60,7 +60,7 @@ const Rain: React.FC = () => {
                 <View3D
                     ref={view3DRef}
                     tag="div"
-                    src="/moneys.glb"
+                    src="/koi.glb"
                     style={styles.view3D}
                     onReady={e => {
                         console.log("3D Model is loaded", e);
@@ -68,7 +68,7 @@ const Rain: React.FC = () => {
                     quickLook={true}
                     webAR={{"vertical": true,}}
                     sceneViewer={{"horizontal": true}}
-                    iosSrc={"/moneys.usdz"}
+                    iosSrc={"/koi.usdz"}
                     scrollable={false}
                     zoom={{"type": "distance"}}
                     wheelScrollable={false}
