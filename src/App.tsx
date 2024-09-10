@@ -13,7 +13,9 @@ const App: React.FC = () => {
                               touch-action="pan-y" alt="A 3D model of an astronaut" shadow-intensity="2"
                               max-camera-orbit="auto 90deg auto"
                               ios-src="/moneys.usdz" xr-environment>
-                    <button slot="ar-button" style={styles.launchButton}>
+                    <button
+                        slot="ar-button"
+                        style={styles.launchButton}>
                         Launch
                     </button>
                 </model-viewer>
@@ -52,6 +54,7 @@ const styles: { [key: string]: React.CSSProperties } = {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
+        textAlign: 'center',
         width: '100%',
         flex: 1,
     },
@@ -66,7 +69,6 @@ const styles: { [key: string]: React.CSSProperties } = {
         fontWeight: 'bold',
         fontSize: '1.5em',
         outline: 'none',
-
     },
 };
 export default App;
