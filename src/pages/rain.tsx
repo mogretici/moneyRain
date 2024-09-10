@@ -43,7 +43,7 @@ const Rain: React.FC = () => {
             await view3DRef.current.loadPlugins(new AROverlay());
             await view3DRef.current.ar.enter();
         }
-        arEnter()
+        arEnter().then(r => console.log("AR is entered", r));
         enableFullscreen();
     }, [stream]);
 
@@ -65,9 +65,9 @@ const Rain: React.FC = () => {
                     onReady={e => {
                         console.log("3D Model is loaded", e);
                     }}
-                    webAR={true}
-                    sceneViewer={true}
                     quickLook={true}
+                    webAR={{"vertical": true,}}
+                    sceneViewer={{"horizontal": true}}
                     iosSrc={"/moneys.usdz"}
                     scrollable={false}
                     zoom={{"type": "distance"}}

@@ -15,10 +15,7 @@ const App: React.FC = () => {
                 const stream = await navigator.mediaDevices.getUserMedia(
                     {video: {facingMode: "environment"}}
                 );
-                await navigator.permissions.query({name: 'accelerometer' as PermissionName});
-                await navigator.permissions.query({name: 'gyroscope' as PermissionName});
-                await navigator.permissions.query({name: 'geolocation'});
-
+              
                 setStream(stream);
                 navigate('/rain');
             } catch (error) {
