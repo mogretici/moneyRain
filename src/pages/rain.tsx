@@ -45,7 +45,6 @@ const Rain: React.FC = () => {
                 style={styles.video}
             />
             <div style={styles.view3D}>
-                {/*<ViewMoney zoom={1} pitch={45} pivot={["40%", "0%", "0%"]}/>*/}
                 <View3D
                     tag="div"
                     src="/moneys.glb"
@@ -54,19 +53,15 @@ const Rain: React.FC = () => {
                         console.log("3D Model is loaded", e);
                     }}
                     iosSrc={"/moneys.usdz"}
-                    exposure={0.4}
-                    pitch={45}
-                    initialZoom={1}
                     scrollable={false}
-                    webAR={{"overlayRoot": containerRef.current}}
+                    webAR={true}
                     sceneViewer={true}
                     quickLook={true}
                     zoom={{"type": "distance"}}
                     wheelScrollable={false}
                     useGrabCursor={false}
                     rotate={false}
-                    arPriority={["webAR", "sceneViewer", "quickLook"]}
-                />
+                    arPriority={["webAR", "quickLook", "sceneViewer"]}/>
             </div>
             <img
                 src="/link.png"
@@ -104,6 +99,12 @@ const styles: { [key: string]: React.CSSProperties } = {
         zIndex: 3,
     },
     view3D: {
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        width: '100vw',
+        height: '100vh',
+        zIndex: 1,
         touchAction: 'none',
     }
 };
