@@ -53,13 +53,14 @@ const Rain: React.FC = () => {
                     onReady={e => {
                         console.log("3D Model is loaded", e);
                     }}
+                    iosSrc={"/moneys.usdz"}
                     exposure={0.4}
                     pitch={45}
                     initialZoom={1}
                     scrollable={false}
                     webAR={{"overlayRoot": containerRef.current}}
-                    sceneViewer={false}
-                    quickLook={false}
+                    sceneViewer={true}
+                    quickLook={true}
                     zoom={{"type": "distance"}}
                     wheelScrollable={false}
                     useGrabCursor={false}
