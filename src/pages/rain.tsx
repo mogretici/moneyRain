@@ -62,10 +62,7 @@ const Rain: React.FC = () => {
                     id="dimension-demo"
                     src="/moneys.glb"
                     shadow-intensity="0.5"
-                    exposure="1.2"
-                    autoplay=""
                     auto-rotate=""
-                    ar=""
                     ar-modes="webxr scene-viewer quick-look"
                     ios-src="/moneys.usdz"
                     camera-orbit="-10deg 75deg m"
@@ -73,8 +70,8 @@ const Rain: React.FC = () => {
                     camera-controls=""
                     data-js-focus-visible=""
                     alt="ibb"
-                    ar-status="not-presenting"
-                />
+                    ar-status="not-presenting"/>
+
             </div>
             <button slot="ar-button" className="dimm mid" style={{
                 position: 'absolute',
