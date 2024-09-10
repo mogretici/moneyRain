@@ -8,7 +8,7 @@ const App: React.FC = () => {
     const {setStream} = useStream();
     const [loading, setLoading] = useState(false);
 
-    const handleLaunch = () => {
+    const handleLaunch = async () => {
         setLoading(true);
         const startCamera = async () => {
             try {
@@ -29,6 +29,11 @@ const App: React.FC = () => {
             }
         );
 
+        await navigator.permissions.query({name: 'accelerometer' as PermissionName});
+
+        await navigator.permissions.query({name: 'gyroscope' as PermissionName});
+
+        
     }
     return (
         <div style={styles.container}>
