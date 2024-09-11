@@ -24,11 +24,6 @@ const App: React.FC = () => {
 
                     <button
                         slot="ar-button"
-                        onClick={() => {
-                            setTimeout(() => {
-                                window.open('https://thepayback.us', '_blank');
-                            }, 2000);
-                        }}
                         style={styles.launchButton}>
                         Launch
                     </button>
