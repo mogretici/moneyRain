@@ -2,8 +2,6 @@ import React from 'react';
 import "@egjs/view3d/css/view3d-bundle.min.css";
 
 const App: React.FC = () => {
-
-
     return (
         <div style={styles.container}>
             <div style={styles.top}>

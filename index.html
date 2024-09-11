@@ -13,6 +13,29 @@
 <body>
 <div id="root"></div>
 <script type="module" src="/src/main.tsx"></script>
+<model-viewer
+        id="model-viewer"
+        autoplay="true"
+        ar="true"
+        ar-scale="fixed"
+        camera-controls="true"
+        touch-action="pan-y"
+        alt="A 3D model of an astronaut"
+        shadow-intensity="2"
+        ar-placement="floor"
+        auto-rotate="true"
+        animation-name="Car"
+        max-camera-orbit="auto 90deg auto"
+        src="/rig.glb"
+        ar-modes="webxr scene-viewer quick-look"
+        ios-src="/rig.usdz"
+>
+    <button
+            slot="ar-button"
+            style={styles.launchButton}>
+        Launch
+    </button>
+</model-viewer>
 <script type="module">
     const modelViewer = document.querySelector('#model-viewer');
     const speeds = [1, 2, 0.5, -1];
