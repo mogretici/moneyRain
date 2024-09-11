@@ -19,37 +19,35 @@ const App: React.FC = () => {
                               touch-action="pan-y" alt="A 3D model of an astronaut" shadow-intensity="2"
                               max-camera-orbit="auto 90deg auto"
                               ios-src="/moneys.usdz" xr-environment
-                              style={{width: '100%', height: '100%'}}
                 >
-
                     <button
                         slot="ar-button"
                         style={styles.launchButton}>
                         Launch
                     </button>
-                    <div
-                        style={{
-                            position: 'absolute',
-                            bottom: '10%',
-                            right: 0,
-                            left: 0,
-                            margin: '1em',
-                            display: 'flex',
-                            flexDirection: 'column',
-                            alignItems: 'center',
+                </model-viewer>
+                <div
+                    style={{
+                        position: 'absolute',
+                        right: 0,
+                        left: 0,
+                        bottom: 0,
+                        padding: '1em',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                    }}
+                >
+
+                    <button
+                        style={styles.linkButton}
+                        onClick={() => {
+                            window.open('https://thepayback.us', '_blank');
                         }}
                     >
-
-                        <button
-                            style={styles.linkButton}
-                            onClick={() => {
-                                window.open('https://thepayback.us', '_blank');
-                            }}
-                        >
-                            <img src="/link.png" alt="The Payback" width={'100%'}/>
-                        </button>
-                    </div>
-                </model-viewer>
+                        <img src="/link.png" alt="The Payback" width={'100%'}/>
+                    </button>
+                </div>
             </div>
         </div>
     );
