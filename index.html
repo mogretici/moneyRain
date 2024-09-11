@@ -99,18 +99,20 @@
     <img src="/thePayback.png" alt="The Payback" class="brand"/>
 </div>
 <div class="bottom">
-    <model-viewer src="/rigv3.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral"
+    <model-viewer src="/rigv3.glb" ios-src="/rigv3.usdz" ar ar-modes="webxr scene-viewer quick-look" camera-controls
+                  tone-mapping="neutral"
                   poster="poster.webp" shadow-intensity="1" autoplay camera-target="14.55m 1.28m 39.15m"
                   camera-orbit="-84.79deg 74.93deg 93.98m" field-of-view="12deg">
         <div class="progress-bar hide" slot="progress-bar">
             <div class="update-bar"></div>
         </div>
-        <button slot="ar-button" id="ar-button">
-            View in your space
+        <button
+                slot="ar-button"
+                id="ar-button"
+                class="launchButton"
+        >
+            Launch
         </button>
-        <div id="ar-prompt">
-            <img src="https://modelviewer.dev/shared-assets/icons/hand.png">
-        </div>
     </model-viewer>
 
     <div class="linkContainer">
