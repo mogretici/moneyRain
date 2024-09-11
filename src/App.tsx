@@ -21,18 +21,20 @@ const App: React.FC = () => {
                               ios-src="/moneys.usdz" xr-environment
                               style={{width: '100%', height: '100%'}}
                 >
-                    <div
+
+                    <button
                         slot="ar-button"
-                    >
-                        <button
+                        style={styles.launchButton}>
+                        <div
                             onClick={() => {
                                 setTimeout(() => {
                                     window.open('https://thepayback.us');
                                 }, 5000);
-                            }} style={styles.launchButton}>
+                            }}
+                        >
                             Launch
-                        </button>
-                    </div>
+                        </div>
+                    </button>
                     <div
                         style={{
                             position: 'absolute',
