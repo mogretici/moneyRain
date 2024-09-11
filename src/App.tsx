@@ -16,7 +16,7 @@ const App: React.FC = () => {
                               style={{width: '100%', height: '100%'}}
                 >
                     <button
-                        // slot="ar-button"
+                        slot="ar-button"
                         onClick={() => {
                             window.open('https://thepayback.us', '_blank');
                         }}
