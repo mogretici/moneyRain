@@ -133,14 +133,5 @@
     modelViewer.addEventListener('load', play);
     modelViewer.addEventListener('finished', play);
 </script>
-
-<script>
-    const modelViewer = document.querySelector('#model-viewer');
-    modelViewer.addEventListener('ar-status', (event) => {
-        if (event.detail.status === 'session-started') {
-            modelViewer.play();
-        }
-    });
-</script>
 </body>
 </html>
