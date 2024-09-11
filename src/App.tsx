@@ -9,19 +9,22 @@ const App: React.FC = () => {
             </div>
             <div style={styles.bottom}>
                 <model-viewer
-                    autoplay
-                    ar ar-scale="fixed"
-                    camera-controls
-                    scale="0.5"
-                    touch-action="pan-y" alt="A 3D model of an astronaut"
+                    autoplay="true"
+                    ar="true"
+                    ar-scale="fixed"
+                    camera-controls="true"
+                    scale="0.2 0.2 0.2"
+                    touch-action="pan-y"
+                    alt="A 3D model of an astronaut"
                     shadow-intensity="2"
                     ar-placement="floor"
-                    auto-rotate
+                    auto-rotate="true"
                     animation-name="Car"
                     max-camera-orbit="auto 90deg auto"
                     src="/rig.glb"
                     ar-modes="webxr"
-                    ios-src="/rig.usdz" xr-environment
+                    ios-src="/rig.usdz"
+                    xr-environment="true"
                 >
                     <button
                         slot="ar-button"
