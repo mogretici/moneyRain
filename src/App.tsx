@@ -14,6 +14,8 @@ const App: React.FC = () => {
                     touch-action="pan-y"
                     autoplay
                     ar
+                    ar-scale="fixed"
+                    max-camera-orbit="auto 90deg auto"
                     ar-modes="webxr scene-viewer quick-look"
                     scale="0.2 0.2 0.2"
                     shadow-intensity="1"
