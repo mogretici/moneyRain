@@ -2,6 +2,8 @@ import React from 'react';
 import "@egjs/view3d/css/view3d-bundle.min.css";
 
 const App: React.FC = () => {
+
+
     return (
         <div style={styles.container}>
             <div style={styles.top}>
@@ -9,9 +11,10 @@ const App: React.FC = () => {
             </div>
             <div style={styles.bottom}>
                 <model-viewer
+                    id="model-viewer"
                     autoplay="true"
                     ar="true"
-                    ar-scale="0.5"
+                    ar-scale="auto"
                     camera-controls="true"
                     scale="0.2"
                     touch-action="pan-y"
@@ -24,7 +27,6 @@ const App: React.FC = () => {
                     src="/rig.glb"
                     ar-modes="webxr scene-viewer quick-look"
                     ios-src="/rig.usdz"
-                    xr-environment="true"
                 >
                     <button
                         slot="ar-button"
