@@ -11,9 +11,9 @@ const App: React.FC = () => {
                 <model-viewer
                     autoplay="true"
                     ar="true"
-                    ar-scale="fixed"
+                    ar-scale="0.5"
                     camera-controls="true"
-                    scale="0.2 0.2 0.2"
+                    scale="0.2"
                     touch-action="pan-y"
                     alt="A 3D model of an astronaut"
                     shadow-intensity="2"
@@ -22,7 +22,7 @@ const App: React.FC = () => {
                     animation-name="Car"
                     max-camera-orbit="auto 90deg auto"
                     src="/rig.glb"
-                    ar-modes="webxr"
+                    ar-modes="webxr scene-viewer quick-look"
                     ios-src="/rig.usdz"
                     xr-environment="true"
                 >
