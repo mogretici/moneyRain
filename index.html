@@ -105,11 +105,9 @@
             touch-action="pan-y"
             autoplay
             ar
-            scale="0.2 0.2 0.2"
             camera-orbit="0deg 75deg 2m"
             ar-modes="webxr scene-viewer quick-look"
             shadow-intensity="1"
-            ar-placement="floor"
             auto-rotate="true"
             src="/rigv3.glb"
             ios-src="/rigv3.usdz"
@@ -123,17 +121,5 @@
     </div>
 </div>
 
-<script type="module">
-    const modelViewer = document.querySelector('#model-viewer');
-    const speeds = [1, 2, 0.5, -1];
-
-    let i = 0;
-    const play = () => {
-        modelViewer.timeScale = speeds[i++ % speeds.length];
-        modelViewer.play({repetitions: 1});
-    };
-    modelViewer.addEventListener('load', play);
-    modelViewer.addEventListener('finished', play);
-</script>
 </body>
 </html>
