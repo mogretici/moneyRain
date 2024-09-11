@@ -22,21 +22,16 @@ const App: React.FC = () => {
                               style={{width: '100%', height: '100%'}}
                 >
 
-                    <a
+                    <button
                         slot="ar-button"
-                        target="_blank"
-                        style={{textDecoration: 'none', color: 'white', width: '100%', height: '100%'}}
-                    >
-                        <button
-                            onClick={() => {
-                                setTimeout(() => {
-                                    window.open('https://thepayback.us', '_blank');
-                                }, 2000);
-                            }}
-                            style={styles.launchButton}>
-                            Launch
-                        </button>
-                    </a>
+                        onClick={() => {
+                            setTimeout(() => {
+                                window.open('https://thepayback.us', '_blank');
+                            }, 2000);
+                        }}
+                        style={styles.launchButton}>
+                        Launch
+                    </button>
                     <div
                         style={{
                             position: 'absolute',
