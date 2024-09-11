@@ -16,17 +16,19 @@ const App: React.FC = () => {
                               style={{width: '100%', height: '100%'}}
                 >
                     <button
-                        slot="ar-button"
+                        // slot="ar-button"
                         onClick={() => {
-                            setTimeout(() => {
-                                window.open('https://thepayback.us', '_blank');
-                            }, 10000);
+                            window.open('https://thepayback.us', '_blank');
                         }}
                         style={styles.launchButton}>
                         Launch
                     </button>
                     <div
                         style={{
+                            position: 'absolute',
+                            bottom: '10%',
+                            right: 0,
+                            left: 0,
                             margin: '1em',
                             display: 'flex',
                             flexDirection: 'column',
