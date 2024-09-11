@@ -1,12 +1,7 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import "@egjs/view3d/css/view3d-bundle.min.css";
 
 const App: React.FC = () => {
-    useEffect(() => {
-        return () => {
-            window.open('https://thepayback.us');
-        }
-    }, []);
     return (
         <div style={styles.container}>
             <div style={styles.top}>
@@ -19,7 +14,6 @@ const App: React.FC = () => {
                     // src="/rig.glb"
                               android-src="/rig.glb"
                               ar-modes="webxr"
-                              poster="/link.png"
                               ios-src="/rig.usdz" xr-environment
                 >
                     <button
