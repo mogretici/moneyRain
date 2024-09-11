@@ -16,9 +16,10 @@ const App: React.FC = () => {
                 <model-viewer ar ar-scale="fixed" camera-controls
                               touch-action="pan-y" alt="A 3D model of an astronaut" shadow-intensity="2"
                               max-camera-orbit="auto 90deg auto"
-                              src="/rig.glb"
+                    // src="/rig.glb"
                               android-src="/rig.glb"
                               ar-modes="webxr"
+                              poster="/link.png"
                               ios-src="/rig.usdz" xr-environment
                 >
                     <button
