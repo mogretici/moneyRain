@@ -2,6 +2,7 @@ import React from 'react';
 import "@egjs/view3d/css/view3d-bundle.min.css";
 
 const App: React.FC = () => {
+
     return (
         <div style={styles.container}>
             <div style={styles.top}>
@@ -11,36 +12,13 @@ const App: React.FC = () => {
                 <model-viewer ar ar-scale="fixed" camera-controls
                               touch-action="pan-y" alt="A 3D model of an astronaut" shadow-intensity="2"
                               max-camera-orbit="auto 90deg auto"
-                              ios-src="/moneys.usdz" xr-environment
-                >
+                              ios-src="/moneys.usdz" xr-environment>
                     <button
                         slot="ar-button"
                         style={styles.launchButton}>
                         Launch
                     </button>
                 </model-viewer>
-                <div
-                    style={{
-                        position: 'absolute',
-                        right: 0,
-                        left: 0,
-                        bottom: 0,
-                        padding: '1em',
-                        display: 'flex',
-                        flexDirection: 'column',
-                        alignItems: 'center',
-                    }}
-                >
-
-                    <button
-                        style={styles.linkButton}
-                        onClick={() => {
-                            window.open('https://thepayback.us', '_blank');
-                        }}
-                    >
-                        <img src="/link.png" alt="The Payback" width={'100%'}/>
-                    </button>
-                </div>
             </div>
         </div>
     );
@@ -92,20 +70,5 @@ const styles: { [key: string]: React.CSSProperties } = {
         fontSize: '1.5em',
         outline: 'none',
     },
-    linkButton: {
-        width: '10em',
-        height: '3em',
-        display: 'flex',
-        alignItems: 'center',
-        backgroundColor: 'rgba(98,98,98,0.49)',
-        color: 'white',
-        border: 'white 1px solid',
-        borderRadius: '2em',
-        cursor: 'pointer',
-        fontWeight: 'bold',
-        fontSize: '1.5em',
-        outline: 'none',
-    },
-
 };
 export default App;
