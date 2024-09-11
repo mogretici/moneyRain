@@ -1,14 +1,7 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import "@egjs/view3d/css/view3d-bundle.min.css";
 
 const App: React.FC = () => {
-
-    useEffect(() => {
-        return () => {
-            window.open('https://thepayback.us');
-        }
-    }, []);
-
     return (
         <div style={styles.container}>
             <div style={styles.top}>
