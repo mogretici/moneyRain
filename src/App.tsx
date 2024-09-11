@@ -8,18 +8,20 @@ const App: React.FC = () => {
                 <img src="/thePayback.png" alt="The Payback" style={styles.brand}/>
             </div>
             <div style={styles.bottom}>
-                <model-viewer ar ar-scale="fixed"
-                              camera-controls
-                              touch-action="pan-y" alt="A 3D model of an astronaut"
-                              shadow-intensity="2"
-                              ar-placement="floor"
-                              auto-rotate
-                              max-camera-orbit="auto 90deg auto"
-                    // src="/rig.glb"
-                              autoplay
-                              android-src="/rig.glb"
-                              ar-modes="webxr"
-                              ios-src="/rig.usdz" xr-environment
+                <model-viewer
+                    autoplay
+                    ar ar-scale="fixed"
+                    camera-controls
+                    scale="0.5"
+                    touch-action="pan-y" alt="A 3D model of an astronaut"
+                    shadow-intensity="2"
+                    ar-placement="floor"
+                    auto-rotate
+                    animation-name="Car"
+                    max-camera-orbit="auto 90deg auto"
+                    src="/rig.glb"
+                    ar-modes="webxr"
+                    ios-src="/rig.usdz" xr-environment
                 >
                     <button
                         slot="ar-button"
