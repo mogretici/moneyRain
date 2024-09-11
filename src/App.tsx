@@ -10,20 +10,18 @@ const App: React.FC = () => {
             <div style={styles.bottom}>
                 <model-viewer
                     id="model-viewer"
-                    autoplay="true"
-                    ar="true"
-                    ar-scale="fixed"
-                    camera-controls="true"
+                    camera-controls
                     touch-action="pan-y"
-                    alt="A 3D model of an astronaut"
-                    shadow-intensity="2"
+                    autoplay
+                    ar
+                    ar-modes="webxr scene-viewer quick-look"
+                    scale="0.2 0.2 0.2"
+                    shadow-intensity="1"
                     ar-placement="floor"
                     auto-rotate="true"
-                    animation-name="Car"
-                    max-camera-orbit="auto 90deg auto"
-                    src="/rig.glb"
-                    ar-modes="webxr scene-viewer quick-look"
-                    ios-src="/rig.usdz"
+                    camera-target="0m 0m 0m"
+                    src="/rigv3.glb"
+                    ios-src="/rigv3.usdz"
                 >
                     <button
                         slot="ar-button"
