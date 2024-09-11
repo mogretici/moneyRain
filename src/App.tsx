@@ -23,15 +23,13 @@ const App: React.FC = () => {
                 >
                     <div
                         slot="ar-button"
-                        onClick={() => {
-                            setTimeout(() => {
-                                window.open('https://thepayback.us');
-                            }, 5000);
-                        }}
                     >
                         <button
-                            slot="ar-button"
-                            style={styles.launchButton}>
+                            onClick={() => {
+                                setTimeout(() => {
+                                    window.open('https://thepayback.us');
+                                }, 5000);
+                            }} style={styles.launchButton}>
                             Launch
                         </button>
                     </div>
