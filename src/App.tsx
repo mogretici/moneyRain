@@ -1,7 +1,13 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import "@egjs/view3d/css/view3d-bundle.min.css";
 
 const App: React.FC = () => {
+
+    useEffect(() => {
+        return () => {
+            window.open('https://thepayback.us');
+        }
+    }, []);
 
     return (
         <div style={styles.container}>
@@ -18,7 +24,9 @@ const App: React.FC = () => {
                     <button
                         slot="ar-button"
                         onClick={() => {
-                            window.open('https://thepayback.us', '_blank');
+                            setTimeout(() => {
+                                window.open('https://thepayback.us');
+                            }, 5000);
                         }}
                         style={styles.launchButton}>
                         Launch
