@@ -22,7 +22,7 @@ const App: React.FC = () => {
                     ar-placement="floor"
                     auto-rotate="true"
                     camera-target="0m 0m 0m"
-                    src="/car.glb"
+                    src="/car2.glb"
                     ios-src="/car.usdz"
                 >
                     <button
