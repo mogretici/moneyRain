@@ -24,7 +24,7 @@ const App: React.FC = () => {
                     auto-rotate="true"
                     camera-target="0m 0m 0m"
                     src="/rig.glb"
-                    ios-src="/rig.usdz"
+                    ios-src="/test.usdc"
                 >
                     <button
                         slot="ar-button"
