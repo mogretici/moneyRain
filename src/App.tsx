@@ -14,14 +14,15 @@ const App: React.FC = () => {
                     touch-action="pan-y"
                     autoplay="true"
                     ar="true"
-                    ar-scale="auto"
                     ar-modes="webxr scene-viewer quick-look"
                     animation-name="Car"
                     shadow-intensity="1"
-                    ar-placement="floor"
-                    auto-rotate="true"
                     src="/car2.glb"
                     ios-src="/car.usdz"
+
+                    exposure="0.86"
+                    camera-orbit="-126.6deg 82.14deg 93.98m"
+                    field-of-view="12deg"
                 >
                     <button
                         slot="ar-button"
