@@ -17,8 +17,8 @@ const App: React.FC = () => {
                     ar-modes="webxr scene-viewer quick-look"
                     animation-name="Car"
                     shadow-intensity="1"
-                    src="/car2.glb"
-                    ios-src="/car.usdz"
+                    src="/ap.glb"
+                    ios-src="/ap.usdz"
 
                     exposure="0.86"
                     camera-orbit="-126.6deg 82.14deg 93.98m"
