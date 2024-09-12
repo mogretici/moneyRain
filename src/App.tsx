@@ -14,7 +14,7 @@ const App: React.FC = () => {
                     touch-action="pan-y"
                     autoplay="true"
                     ar="true"
-                    ar-scale="fixed"
+                    ar-scale="auto"
                     max-camera-orbit="auto 90deg auto"
                     ar-modes="webxr scene-viewer quick-look"
                     animation-name="Car"
