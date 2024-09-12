@@ -18,6 +18,7 @@ const App: React.FC = () => {
                     max-camera-orbit="auto 90deg auto"
                     ar-modes="webxr scene-viewer quick-look"
                     scale="0.2 0.2 0.2"
+                    animation-name="Car"
                     shadow-intensity="1"
                     ar-placement="floor"
                     auto-rotate="true"
