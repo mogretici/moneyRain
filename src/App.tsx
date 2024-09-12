@@ -15,13 +15,11 @@ const App: React.FC = () => {
                     autoplay="true"
                     ar="true"
                     ar-scale="auto"
-                    max-camera-orbit="auto 90deg auto"
                     ar-modes="webxr scene-viewer quick-look"
                     animation-name="Car"
                     shadow-intensity="1"
                     ar-placement="floor"
                     auto-rotate="true"
-                    camera-target="0m 0m 0m"
                     src="/car2.glb"
                     ios-src="/car.usdz"
                 >
