@@ -10,10 +10,10 @@ const App: React.FC = () => {
             <div style={styles.bottom}>
                 <model-viewer
                     id="model-viewer"
-                    camera-controls
+                    camera-controls="true"
                     touch-action="pan-y"
-                    autoplay
-                    ar
+                    autoplay="true"
+                    ar="true"
                     ar-scale="fixed"
                     max-camera-orbit="auto 90deg auto"
                     ar-modes="webxr scene-viewer quick-look"
@@ -23,8 +23,8 @@ const App: React.FC = () => {
                     ar-placement="floor"
                     auto-rotate="true"
                     camera-target="0m 0m 0m"
-                    src="/rigv3.glb"
-                    ios-src="/rigv3.usdz"
+                    src="/rig.glb"
+                    ios-src="/rig.usdz"
                 >
                     <button
                         slot="ar-button"
